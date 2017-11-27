@@ -1,0 +1,63 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ title }}</title>
+    <style type="text/css" media="screen">
+.container {
+  padding: 8rem 1.5rem;
+}
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="index">蛋额</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="top-answer-list" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">点赞数最多的回答</a>
+            <div class="dropdown-menu" aria-labelledby="dropdown01">
+              <a class="dropdown-item" href="top-answer-list">回答列表</a>
+              <a class="dropdown-item" href="top-answer-question-analyse">问题词频统计</a>
+              <a class="dropdown-item" href="top-answer-answer-analyse">回答词频统计</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="top-follow-topic" id="dropdown02" >关注人数最多的话题</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main role="main" class="container">
+    <h1>{{ title }}</h1>
+    <br />
+    <p>{{ hint }}</p>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          {{ #th }}
+          <th scope="col">{{ . }}</th>
+          {{ /th }}
+        </tr>
+      </thead>
+      <tbody>
+        {{{ tbody }}}
+      </tbody>
+    </table>
+
+      <ul class="pagination justify-content-center">
+        {{ #pagination }}
+        <li class="page-item {{ #active }}active{{ /active }}"><a class="page-link" href="?page={{ page }}">{{ text }}</a></li>
+        {{ /pagination }}
+      </ul>
+
+    </main>
+    <script src="bundle.js"></script>
+  </body>
+</html>
