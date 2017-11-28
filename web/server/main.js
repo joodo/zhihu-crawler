@@ -65,7 +65,7 @@ var pageData = {
     }
 }
 
-app.use(express.static('public/js'), {maxAge:1000*60*60});
+app.use(express.static('public/js', {maxAge:1000*60*60}));
 app.get('/*', function(request, response) {
     var view = pageData[request.params[0]]
     if (!view || view === '' || view === 'index') {
