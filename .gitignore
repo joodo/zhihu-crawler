@@ -1,5 +1,6 @@
 # OS
 .DS_Store
+*.log
 
 # Python
 *.bak
@@ -7,4 +8,7 @@
 
 # Bloom
 *.bloom
+
+# Webpack
+web/node_modules
 

@@ -1,10 +1,8 @@
 var webpack = require('webpack');
 
 module.exports = {
-	//entry:  __dirname + "/app/main.js",
 	entry: {
-		'js/top-answer-list': __dirname + '/app/top-answer-list.js',
-		'js/bundle': __dirname + '/app/main.js',
+		'js/bundle': __dirname + '/app/main.js'
 	},
 	output: {
 		path: __dirname + '/public',
